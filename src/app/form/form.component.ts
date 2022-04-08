@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 import { ItemModel } from '../models/item-model';
 import { Guid } from 'guid-typescript';
 
-
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',

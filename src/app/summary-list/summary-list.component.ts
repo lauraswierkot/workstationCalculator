@@ -15,23 +15,31 @@ export class SummaryListComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if(!changes['item'].isFirstChange()){   //Lista bedzie pusta przed pierwszym inputem
     this.itemsList.push(this.item);
-    this.add(Number(this.item.price.valueOf()))};
+    this.addPrice(Number(this.item.price.valueOf()))};
+    this.addItem(this.itemsList.length)
   }
 
-  total:number=0;
+  totalPrice : number = 0;
 
-  add(price: number){
-    this.total +=price;
+  addPrice(price: number){
+    this.totalPrice +=price;
+  }
+  substractPrice(price: number){
+    this.totalPrice -= price;
   }
 
-  substract(price: number){
-    this.total -= price;
+  totalItems : number = 0;
+
+  addItem(item: number){
+    this.totalItems = item;
+  }
+  substractItem(item: number){
+    this.totalItems = item + 1;
   }
 
   onDelete(item : ItemModel) {
-    alert(item.id);
     this.itemsList = this.itemsList.filter((i) => i.id !== item.id); //filter i lambda expresiions (arrow function)
-    this.substract(Number(item.price.valueOf()));
+    this.substractPrice(Number(item.price.valueOf()));
+    this.substractItem((this.itemsList.length) -1);
   }
-
 }

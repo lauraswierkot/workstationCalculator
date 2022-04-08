@@ -1,13 +1,25 @@
 <h2>Your list</h2>
 
-<ul>
-    <li *ngFor="let item of itemsList">
-      <button (click)="onDelete(item)">X</button>
-      {{item.id}}{{item.item}} {{item.details}} {{item.category}} {{item.price}}
-    </li>
-  </ul> 
+<table>
+  <tr>
+    <th>Num.</th>
+    <th>Nazwa produktu</th>
+    <th>Opis</th>
+    <th>Kategoria</th>
+    <th>Cena</th>
+    <th>Usuń pozycję</th>
+  </tr>
+  <tr  *ngFor="let item of itemsList" >
+    <td>1</td>
+    <td>{{item.item}}</td>
+    <td>{{item.details}}</td>
+    <td>{{item.category}}</td>
+    <td>{{item.price}}</td>
+    <td><button (click)="onDelete(item)">X</button></td>
+  </tr>
+</table>
 
 <div class="summary">
- <div class="totalPrice">Total: {{total}}</div>
- <div class="totalItems">Items: </div>
-</div>
+  <div class="totalPrice">Suma: {{totalPrice}} PLN</div>
+  <div class="totalItems">Ilość pozycji: {{totalItems}} </div>
+ </div>
