@@ -1,6 +1,8 @@
+import { Guid } from "guid-typescript";
+
 export interface ItemModel
 {
-    id: number; 
+    id: Guid; 
     item: string; 
     details: string; 
     category: string; 

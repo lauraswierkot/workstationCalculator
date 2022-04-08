@@ -1,19 +1,21 @@
 <h3>Add items to the list</h3>
 
+<div class="wrapper">
 <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" ngNativeValidate>
-  <label for="item">Add item</label>
-  <input placeholder="Add item" ngModel name="item" required />
-  <label for="details">Add details</label>
-  <input placeholder="Add details" ngModel name="details" required />
-  <label for="category">Choose category of your item</label>
+  <label for="item">Add item</label><br>
+  <input placeholder="Add item" ngModel name="item" required/><br>
+  <label for="details">Add details</label><br>
+  <input placeholder="Add details" ngModel name="details" required/><br>
+  <label for="category">Choose category of your item</label><br>
   <select ngModel name="category" id="category" required>
     <option value="furniture">furniture</option>
     <option value="accessories">accessories</option>
     <option value="computer">computer</option>
     <option value="upgrades">upgrades</option>
-  </select>
-  <label for="price">Add price</label>
-  <input placeholder="Add price" ngModel name="price" required />
-  <button type="submit">Add</button>
+  </select><br>
+  <label for="price">Add price</label><br>
+  <input placeholder="Add price" ngModel name="price" required /><br>
+  <button type="submit">Add</button><br>
 </form>
+</div>
 

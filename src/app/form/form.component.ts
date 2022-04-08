@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ItemModel } from '../models/item-model';
+import { Guid } from 'guid-typescript';
 
 
 @Component({
@@ -11,29 +12,20 @@ import { ItemModel } from '../models/item-model';
 export class FormComponent implements OnInit {
 
   @Output() buttonClicked : EventEmitter<ItemModel> = new EventEmitter<ItemModel>();
-
+  
   item: string = "";
   details: string ="";
-  price: number=0; 
-  itemsList: ItemModel[] = [];
+  price: number=0;  
 
   ngOnInit(): void {}
 
   onSubmit(form: NgForm) {
-    this.itemsList = this.itemsList.concat({
-      id: Math.random(),
-      item: form.form.value.item,
-      details: form.form.value.details,
-      category: form.form.value.category,
-      price: form.form.value.price
-    });
-    console.log('Submitted', form.form.value);
-    this.buttonClicked.emit(form.form.value);
+      let model = {} as ItemModel;
+      model.category = form.form.value.category;
+      model.details = form.form.value.details;
+      model.id = Guid.create();
+      model.item = form.form.value.item;
+      model.price = form.form.value.price;
+      this.buttonClicked.emit(model);
   }
-
-  onDelete(id: number) {
-    this.itemsList = this.itemsList.filter((item) => item.id !== id);
-  }
-
-
 }
