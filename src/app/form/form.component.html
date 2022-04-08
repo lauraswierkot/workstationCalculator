@@ -1,21 +1,21 @@
-<h3>Add items to the list</h3>
+<h3>Dodaj produkty do listy</h3>
 
 <div class="wrapper">
 <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" ngNativeValidate>
-  <label for="item">Add item</label><br>
-  <input placeholder="Add item" ngModel name="item" required/><br>
-  <label for="details">Add details</label><br>
-  <input placeholder="Add details" ngModel name="details" required/><br>
-  <label for="category">Choose category of your item</label><br>
+  <label for="item">Dodaj produkt</label><br>
+  <input placeholder="Nazwa" ngModel name="item" required/><br>
+  <label for="details">Dodaj szczegóły</label><br>
+  <input placeholder="Dodaj dane szczegółowe typu firma oraz model produktu" ngModel name="details" required/><br>
+  <label for="category">Wybierz kategorię produktu</label><br>
   <select ngModel name="category" id="category" required>
-    <option value="furniture">furniture</option>
-    <option value="accessories">accessories</option>
-    <option value="computer">computer</option>
-    <option value="upgrades">upgrades</option>
+    <option value="opt1">podzespoły komputera</option>
+    <option value="opt2">urządzenia peryferyjne</option>
+    <option value="opt3">oprogramowanie</option>
+    <option value="opt4">inne</option>
   </select><br>
-  <label for="price">Add price</label><br>
-  <input placeholder="Add price" ngModel name="price" required /><br>
-  <button type="submit">Add</button><br>
+  <label for="price">Podaj cenę</label><br>
+  <input placeholder="Podaj cenę" ngModel name="price" required /><br>
+  <button type="submit">Dodaj</button><br>
 </form>
 </div>
 

@@ -1,5 +1,8 @@
 import { Component, OnChanges, Input, SimpleChanges} from '@angular/core';
 import { ItemModel } from '../models/item-model';
+import {AfterViewInit, ViewChild} from '@angular/core';
+import {MatSort, Sort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-summary-list',
