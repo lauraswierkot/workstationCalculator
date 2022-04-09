@@ -1,27 +1,53 @@
 <h2>Lista</h2>
 
-<div class="table-responsive">
-<table class="table table-hover">
+<select [(ngModel)]="chosenCategory">
+  <option value="podzespoły komputera">podzespoły komputera</option>
+  <option value="urządzenia peryferyjne">urządzenia peryferyjne</option>
+  <option value="oprogramowanie">oprogramowanie</option>
+  <option value="inne">inne</option>
+  <option value="">pokaż wszystkie kategorie</option>
+</select>
+<button type="text" id="filter" (click)="filterTable()">Zatwierdź</button>
+
+
+<table>
   <tr>
-    <th scope="col">Num.</th>
-    <th scope="col">Nazwa produktu</th>
-    <th scope="col">Opis</th>
-    <th scope="col">Kategoria</th>
-    <th scope="col">Cena</th>
+    <th>Num.</th>
+    <th>
+      Nazwa produktu
+      <span (click)="sortTable('title', 1)"><mat-icon>keyboard_arrow_up</mat-icon></span> 
+      <span (click)="sortTable('title', -1)"><mat-icon>keyboard_arrow_down</mat-icon></span>
+    </th>
+    <th>
+      Opis
+      <span (click)="sortTable('details', 1)"><mat-icon>keyboard_arrow_up</mat-icon></span> 
+      <span (click)="sortTable('details', -1)"><mat-icon>keyboard_arrow_down</mat-icon></span>
+    </th>
+    <th>
+      Kategoria
+      <span (click)="sortTable('category', 1)"><mat-icon>keyboard_arrow_up</mat-icon></span> 
+      <span (click)="sortTable('category', -1)"><mat-icon>keyboard_arrow_down</mat-icon></span>
+     </th>
+    <th>Cena
+      <span (click)="sortTable('price', 1)"><mat-icon>keyboard_arrow_up</mat-icon></span> 
+      <span (click)="sortTable('price', -1)"><mat-icon>keyboard_arrow_up</mat-icon></span>
+    </th>
     <th>Usuń pozycję</th>
   </tr>
-  <tr  *ngFor="let item of itemsList" >
-    <td>1</td>
+  <tbody>
+  <tr *ngFor="let item of itemsList" >
+    <td></td>
     <td>{{item.item}}</td>
     <td>{{item.details}}</td>
     <td>{{item.category}}</td>
     <td>{{item.price}}</td>
     <td><button (click)="onDelete(item)">X</button></td>
   </tr>
+</tbody>
 </table>
-</div>
+
 
 <div class="summary">
   <div class="totalPrice">Suma: {{totalPrice}} PLN</div>
-  <div class="totalItems">Ilość pozycji: {{totalItems}} </div>
+  <div class="totalItems">Ilość pozycji: {{totalItem}} </div>
  </div>

@@ -22,4 +22,5 @@ describe('SummaryListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

@@ -14,35 +14,105 @@ export class SummaryListComponent implements OnChanges {
   @Input() item : ItemModel = {} as ItemModel;
 
   itemsList : ItemModel[] = [];
+  spareitemsList : ItemModel[] = [];
+  chosenCategory : string = '';
+  totalPrice : number = 0;
+  totalItem : number = 0;
 
   ngOnChanges(changes: SimpleChanges): void {
     if(!changes['item'].isFirstChange()){   //Lista bedzie pusta przed pierwszym inputem
     this.itemsList.push(this.item);
-    this.addPrice(Number(this.item.price.valueOf()))};
-    this.addItem(this.itemsList.length)
+    this.spareitemsList = this.itemsList;
+    this.countItems();
+    this.countPrice();
+  }}
+
+  countItems(){
+    this.totalItem = this.itemsList.length;
   }
 
-  totalPrice : number = 0;
-
-  addPrice(price: number){
-    this.totalPrice +=price;
-  }
-  substractPrice(price: number){
-    this.totalPrice -= price;
-  }
-
-  totalItems : number = 0;
-
-  addItem(item: number){
-    this.totalItems = item;
-  }
-  substractItem(item: number){
-    this.totalItems = item + 1;
+  countPrice(){
+    this.totalPrice = 0;
+    for(let item of this.itemsList){
+      this.totalPrice += Number(item.price.valueOf());
+    }
   }
 
   onDelete(item : ItemModel) {
     this.itemsList = this.itemsList.filter((i) => i.id !== item.id); //filter i lambda expresiions (arrow function)
-    this.substractPrice(Number(item.price.valueOf()));
-    this.substractItem((this.itemsList.length) -1);
+    this.countItems();
+    this.countPrice();
   }
+  
+  filterTable(){
+    if(this.chosenCategory == ""){
+      this.itemsList = this.spareitemsList;
+    }
+    else{
+      this.itemsList = this.spareitemsList.filter((j) => j.category == this.chosenCategory);
+    }
+    this.countItems();
+    this.countPrice();
+  }
+
+ sortTable(column: string, n: number  ) {
+   switch(column) {
+     case 'title': 
+     {
+      this.itemsList = this.itemsList.sort((a,b) => 
+      {
+        if (a.item > b.item){
+          return 1 * n;
+        }
+        if (a.item < b.item){
+          return -1 * n;
+        }
+        return 0;
+      });
+      break;
+     }
+     case 'details': {
+      this.itemsList = this.itemsList.sort((a,b) => {
+        if (a.details > b.details){
+          return 1 * n;
+        }
+        if (a.details < b.details){
+          return -1 * n;
+        }
+        return 0;
+      });
+      break;
+    }
+     case 'category': {
+        this.itemsList = this.itemsList.sort((a,b) => {
+          if (a.category > b.category){
+            return 1 * n;
+          }
+          if (a.category < b.category){
+            return -1 * n;
+          }
+          return 0;
+        });
+        break;
+      }
+      case 'price': {
+        this.itemsList = this.itemsList.sort((a,b) => {
+          if (a.price > b.price){
+            return 1 * n;
+          }
+          if (a.price < b.price){
+            return -1 * n;
+          }
+          return 0;
+        });
+        break;
+      }
+     default: {
+       break;
+     }
+   }
+
+ }
+  
+
 }

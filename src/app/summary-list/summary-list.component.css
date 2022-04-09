@@ -9,3 +9,9 @@ table {
     padding: 8px;
     text-align: center;
   }
+
+table { counter-reset: rowNumber; }
+
+table tbody tr { counter-increment: rowNumber; }
+
+table tr td:first-child::before { content: counter(rowNumber); }
