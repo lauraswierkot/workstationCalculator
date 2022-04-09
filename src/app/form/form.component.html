@@ -4,14 +4,11 @@
 <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" ngNativeValidate>
   <label for="item">Dodaj produkt</label><br>
   <input placeholder="Nazwa" ngModel name="item" required/><br>
-  <label for="details">Dodaj szczegóły</label><br>
+  <label for ="details">Dodaj szczegóły</label><br>
   <input placeholder="Dodaj dane szczegółowe typu firma oraz model produktu" ngModel name="details" required/><br>
   <label for="category">Wybierz kategorię produktu</label><br>
   <select ngModel name="category" id="category" required>
-    <option value="podzespoły komputera">podzespoły komputera</option>
-    <option value="urządzenia peryferyjne">urządzenia peryferyjne</option>
-    <option value="oprogramowanie">oprogramowanie</option>
-    <option value="inne">inne</option>
+  <option *ngFor="let category of categories" [value]="category">{{category}}</option>
   </select><br>
   <label for="price">Podaj cenę</label><br>
   <input placeholder="Podaj cenę" ngModel name="price" required /><br>
@@ -19,3 +16,5 @@
 </form>
 </div>
 
+<p><input type="text" placeholder="dodaj kategorię" id="category" name="newCategory" [(ngModel)]="category"></p>
+<button type="button" (click)="addCategory()">Clickme</button>

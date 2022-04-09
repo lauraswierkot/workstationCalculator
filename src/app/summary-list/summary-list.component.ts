@@ -12,6 +12,8 @@ import {MatTableDataSource} from '@angular/material/table';
 export class SummaryListComponent implements OnChanges {
 
   @Input() item : ItemModel = {} as ItemModel;
+  @Input() categories : string[] = [];
+
 
   itemsList : ItemModel[] = [];
   spareitemsList : ItemModel[] = [];

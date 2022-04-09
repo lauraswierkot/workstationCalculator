@@ -1,10 +1,7 @@
 <h2>Lista</h2>
 
 <select [(ngModel)]="chosenCategory">
-  <option value="podzespoły komputera">podzespoły komputera</option>
-  <option value="urządzenia peryferyjne">urządzenia peryferyjne</option>
-  <option value="oprogramowanie">oprogramowanie</option>
-  <option value="inne">inne</option>
+  <option *ngFor="let item of categories" [value]="item">{{item}}</option>
   <option value="">pokaż wszystkie kategorie</option>
 </select>
 <button type="text" id="filter" (click)="filterTable()">Zatwierdź</button>
@@ -45,7 +42,6 @@
   </tr>
 </tbody>
 </table>
-
 
 <div class="summary">
   <div class="totalPrice">Suma: {{totalPrice}} PLN</div>

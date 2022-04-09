@@ -10,8 +10,12 @@ export class AppComponent {
   title = 'workstationCalculator';
 
   passedValue : ItemModel = {} as ItemModel;
+  passedCategory : string[] = [] as string[];
 
   parentEventHandlerFunction(valueEmitted: ItemModel){
-  this.passedValue = valueEmitted;
-}
+  this.passedValue = valueEmitted;}
+
+  receiveCategoriesFromChild(categoryEmitted: string[]){
+    this.passedCategory = categoryEmitted;}
+
 }

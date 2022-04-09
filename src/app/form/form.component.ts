@@ -11,10 +11,19 @@ import { Guid } from 'guid-typescript';
 export class FormComponent implements OnInit {
 
   @Output() buttonClicked : EventEmitter<ItemModel> = new EventEmitter<ItemModel>();
+  @Output() categoryAdded : EventEmitter<string[]> = new EventEmitter<string[]>();
   
   item: string = "";
   details: string ="";
   price: number=0;  
+  category: string = "";
+
+  categories : string[] =  ['podzespoły komputera', 'urządzenia peryferyjne', 'oprogramowanie', 'inne'];
+
+  addCategory(){
+    this.categories.push(this.category);
+    this.categoryAdded.emit(this.categories);
+  }
 
   ngOnInit(): void {}
 
@@ -27,4 +36,5 @@ export class FormComponent implements OnInit {
       model.price = form.form.value.price;
       this.buttonClicked.emit(model);
   }
+
 }

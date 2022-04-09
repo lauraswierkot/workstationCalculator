@@ -1,4 +1,4 @@
 <app-header></app-header>
-<app-form (buttonClicked)="parentEventHandlerFunction($event)"></app-form>
-<app-summary-list [item]="passedValue"></app-summary-list>
+<app-form (buttonClicked)="parentEventHandlerFunction($event)" (categoryAdded)="receiveCategoriesFromChild($event)"></app-form>
+<app-summary-list [item]="passedValue" [categories]="passedCategory"></app-summary-list>
 <router-outlet></router-outlet>
