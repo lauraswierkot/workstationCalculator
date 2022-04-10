@@ -1,8 +1,6 @@
 import { Component, OnChanges, Input, SimpleChanges} from '@angular/core';
 import { ItemModel } from '../models/item-model';
 import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatSort, Sort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-summary-list',
@@ -22,7 +20,8 @@ export class SummaryListComponent implements OnChanges {
   totalItem : number = 0;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(!changes['item'].isFirstChange()){   //Lista bedzie pusta przed pierwszym inputem
+    console.log(changes['categories']);
+    if(changes['item'] !== undefined && !changes['item'].isFirstChange()){   // pierwszy wygenerowanie komponentu rejestruje zmiane ale nie zostal utworzony item,przy dodaniu kat nie zostal takze zdefiniowany
     this.itemsList.push(this.item);
     this.spareitemsList = this.itemsList;
     this.countItems();

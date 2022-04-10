@@ -1,5 +1,6 @@
-<h2>Lista</h2>
+<h3>Lista</h3>
 
+<div class="wrapper">
 <select [(ngModel)]="chosenCategory">
   <option *ngFor="let item of categories" [value]="item">{{item}}</option>
   <option value="">pokaż wszystkie kategorie</option>
@@ -27,7 +28,7 @@
      </th>
     <th>Cena
       <span (click)="sortTable('price', 1)"><mat-icon>keyboard_arrow_up</mat-icon></span> 
-      <span (click)="sortTable('price', -1)"><mat-icon>keyboard_arrow_up</mat-icon></span>
+      <span (click)="sortTable('price', -1)"><mat-icon>keyboard_arrow_down</mat-icon></span>
     </th>
     <th>Usuń pozycję</th>
   </tr>
@@ -42,8 +43,10 @@
   </tr>
 </tbody>
 </table>
+</div>
 
 <div class="summary">
+  <h3 class="summaryTitle">Podsumowanie</h3>
   <div class="totalPrice">Suma: {{totalPrice}} PLN</div>
-  <div class="totalItems">Ilość pozycji: {{totalItem}} </div>
- </div>
+  <div class="totalItems">Ilość pozycji: {{totalItem}} </div><br><br>
+ </div><br>

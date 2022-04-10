@@ -1,4 +1,4 @@
-<h3>Dodaj produkty do listy</h3>
+<h3 class="title">Dodaj produkty do listy</h3>
 
 <div class="wrapper">
 <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" ngNativeValidate>
@@ -10,11 +10,13 @@
   <select ngModel name="category" id="category" required>
   <option *ngFor="let category of categories" [value]="category">{{category}}</option>
   </select><br>
+  <p><input class="customCategory" type="text" placeholder="lub dodaj własną kategorię" id="category" name="newCategory" [(ngModel)]="category"></p>
+  <button type="button" (click)="addCategory()">Dodaj</button><br>
   <label for="price">Podaj cenę</label><br>
   <input placeholder="Podaj cenę" ngModel name="price" required /><br>
-  <button type="submit">Dodaj</button><br>
+  <button class="submitButton" type="submit">Dodaj do listy</button><br>
 </form>
 </div>
 
-<p><input type="text" placeholder="dodaj kategorię" id="category" name="newCategory" [(ngModel)]="category"></p>
-<button type="button" (click)="addCategory()">Clickme</button>
+
+

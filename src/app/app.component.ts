@@ -1,3 +1,4 @@
+import { localizedString } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
 import { ItemModel } from './models/item-model';
 
@@ -10,12 +11,14 @@ export class AppComponent {
   title = 'workstationCalculator';
 
   passedValue : ItemModel = {} as ItemModel;
-  passedCategory : string[] = [] as string[];
+  passedCategory : string[] = [];
 
   parentEventHandlerFunction(valueEmitted: ItemModel){
   this.passedValue = valueEmitted;}
 
   receiveCategoriesFromChild(categoryEmitted: string[]){
-    this.passedCategory = categoryEmitted;}
+    this.passedCategory = categoryEmitted;
+    console.log(categoryEmitted);
+  }
 
 }
