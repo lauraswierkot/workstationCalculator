@@ -79,6 +79,7 @@ table tr td:first-child::before { content: counter(rowNumber); }
   background-color: #f2f2f2;
   box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);;
   padding: 20px;
+  padding-bottom: 0px !important;
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
