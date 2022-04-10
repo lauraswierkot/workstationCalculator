@@ -1,4 +1,3 @@
-import { localizedString } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
 import { ItemModel } from './models/item-model';
 

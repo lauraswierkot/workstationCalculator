@@ -21,7 +21,7 @@ export class SummaryListComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes['categories']);
-    if(changes['item'] !== undefined && !changes['item'].isFirstChange()){   // pierwszy wygenerowanie komponentu rejestruje zmiane ale nie zostal utworzony item,przy dodaniu kat nie zostal takze zdefiniowany
+    if(changes['item'] !== undefined && !changes['item'].isFirstChange()){   
     this.itemsList.push(this.item);
     this.spareitemsList = this.itemsList;
     this.countItems();
@@ -40,7 +40,7 @@ export class SummaryListComponent implements OnChanges {
   }
 
   onDelete(item : ItemModel) {
-    this.itemsList = this.itemsList.filter((i) => i.id !== item.id); //filter i lambda expresiions (arrow function)
+    this.itemsList = this.itemsList.filter((i) => i.id !== item.id); 
     this.countItems();
     this.countPrice();
   }
@@ -112,8 +112,4 @@ export class SummaryListComponent implements OnChanges {
        break;
      }
    }
-
- }
-  
-
-}
+ }}
