@@ -25,3 +25,25 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+_______________________________________________________________________________________________________________________________________________________________________
+
+![angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![material-ui](https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=mui&logoColor=white)
+
+
+Aplikacja webowa, która umożliwia obliczenie kosztów stanowiska komputerowego.
+
+Projekt składa się z formularza, w którym należy uzupełnić nazwę, opis, kategorię oraz cenę produktu.
+
+Istnieje możliwość dodania własnej kategorii.
+
+Pod formularzem znajduje się lista dodanych przez użytkownika produktów. Listę można sortować po wybranych kolumnach. 
+Z kolei opcja filtrowania umożliwia wyświetlenie produktów z wybranej kategorii.
+
+Ostatnim elementem projektu jest tabela z podsumowaniem, która na bieżąco oblicza łączny koszt i ilości dodanych (lub wybranych w przypadku filtrowania) pozycji.
+
+
