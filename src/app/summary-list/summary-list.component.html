@@ -1,6 +1,6 @@
-<h3>Lista</h3>
+<h3 class="title">Lista</h3>
 
-<div class="wrapper">
+<div class="wrapper" style="overflow-x:auto;">
 <select [(ngModel)]="chosenCategory">
   <option *ngFor="let item of categories" [value]="item">{{item}}</option>
   <option value="">pokaż wszystkie kategorie</option>
@@ -39,14 +39,14 @@
     <td>{{item.details}}</td>
     <td>{{item.category}}</td>
     <td>{{item.price}}</td>
-    <td><button (click)="onDelete(item)">X</button></td>
+    <td><button class="delete" (click)="onDelete(item)">X</button></td>
   </tr>
 </tbody>
 </table>
 </div>
 
 <div class="summary">
-  <h3 class="summaryTitle">Podsumowanie</h3>
+  <h3>Podsumowanie</h3>
   <div class="totalPrice">Suma: {{totalPrice}} PLN</div>
   <div class="totalItems">Ilość pozycji: {{totalItem}} </div><br><br>
  </div><br>

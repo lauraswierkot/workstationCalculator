@@ -3,7 +3,7 @@ h3{
 }
 
 .title{
-  margin-top: 55px;
+  margin-top: 40px;
 }
 
 .wrapper{
@@ -37,7 +37,7 @@ select{
   height: 38px;
   margin-bottom: 2px;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 3.5px !important;
 }
 
 button{
@@ -54,6 +54,12 @@ button{
   margin-bottom: 15px;
   transition-duration: 0.4s;
   cursor: pointer;
+}
+
+.delete{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  vertical-align:auto;
 }
 
 button:hover{
@@ -77,3 +83,4 @@ table tr td:first-child::before { content: counter(rowNumber); }
   margin-left: 15%;
   margin-right: 15%;
 }
+

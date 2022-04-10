@@ -11,12 +11,9 @@
   <option *ngFor="let category of categories" [value]="category">{{category}}</option>
   </select><br>
   <p><input class="customCategory" type="text" placeholder="lub dodaj własną kategorię" id="category" name="newCategory" [(ngModel)]="category"></p>
-  <button type="button" (click)="addCategory()">Dodaj</button><br>
+  <button  class="addButton" type="button" (click)="addCategory()">Dodaj</button><br>
   <label for="price">Podaj cenę</label><br>
   <input placeholder="Podaj cenę" ngModel name="price" required /><br>
   <button class="submitButton" type="submit">Dodaj do listy</button><br>
 </form>
 </div>
-
-
-
