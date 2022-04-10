@@ -42,7 +42,4 @@ Ostatnim elementem projektu jest tabela z podsumowaniem, która na bieżąco obl
 
 Link do preview: https://6252f3bd0793e50009a3e16d--peppy-daifuku-6b4379.netlify.app/
 
-![image](https://user-images.githubusercontent.com/93220488/162628615-b34f6bbc-fb92-4f0a-ae61-091d8f374e52.png)
-
-
-
+![image](https://user-images.githubusercontent.com/93220488/162628735-15f05d1e-9777-4c52-bae7-4368a1eebf5b.png)
