@@ -28,7 +28,7 @@ ________________________________________________________________________________
 ![typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![material-ui](https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=mui&logoColor=white)
 
-##[PL]
+## PL
 
 Aplikacja webowa, która umożliwia obliczenie kosztów stanowiska komputerowego.
 
@@ -43,7 +43,7 @@ Ostatnim elementem projektu jest tabela z podsumowaniem, która na bieżąco obl
 
 Link do preview: https://6252f3bd0793e50009a3e16d--peppy-daifuku-6b4379.netlify.app/.
 
-##[ENG]
+## ENG
 
 Web application that allows you to calculate the costs of a computer workstation.
 
