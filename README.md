@@ -28,6 +28,7 @@ ________________________________________________________________________________
 ![typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![material-ui](https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=mui&logoColor=white)
 
+##[PL]
 
 Aplikacja webowa, która umożliwia obliczenie kosztów stanowiska komputerowego.
 
@@ -40,6 +41,21 @@ Z kolei opcja filtrowania umożliwia wyświetlenie produktów z wybranej kategor
 
 Ostatnim elementem projektu jest tabela z podsumowaniem, która na bieżąco oblicza łączny koszt i ilości dodanych (lub wybranych w przypadku filtrowania) pozycji.
 
-Link do preview: https://6252f3bd0793e50009a3e16d--peppy-daifuku-6b4379.netlify.app/
+Link do preview: https://6252f3bd0793e50009a3e16d--peppy-daifuku-6b4379.netlify.app/.
+
+##[ENG]
+
+Web application that allows you to calculate the costs of a computer workstation.
+
+The project consists of a form where you have to fill in the name, description, category and price of the product.
+
+It is possible to add your own category.
+
+Under the form there is a list of products added by the user. The list can be sorted by selected columns. 
+Filtering option allows you to display products from a selected category.
+
+The last element of the project is a table with a summary, which continuously calculates the total cost and quantity of added (or selected in the case of filtering) items.
+
+Preview: https://6252f3bd0793e50009a3e16d--peppy-daifuku-6b4379.netlify.app/.
 
 ![image](https://user-images.githubusercontent.com/93220488/162628735-15f05d1e-9777-4c52-bae7-4368a1eebf5b.png)
